@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class TrainingmanagementsystemApplication {
 
 	public static void main(String[] args) {
-		System.out.println("start");
+		System.out.println("start");//Comment added
 		SpringApplication.run(TrainingmanagementsystemApplication.class, args);
 		System.out.println("end");
 	}
