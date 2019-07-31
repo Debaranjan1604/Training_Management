@@ -1,4 +1,4 @@
-package com.training.trainingmanagementsystem.dao;
+package com.training.trainingmanagementsystem.repository.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +12,11 @@ import com.training.trainingmanagementsystem.bean.AppRole;
 import com.training.trainingmanagementsystem.bean.AppUser;
 import com.training.trainingmanagementsystem.bean.Subject;
 import com.training.trainingmanagementsystem.bean.UserRole;
+import com.training.trainingmanagementsystem.dao.AddSubjectDAO;
+import com.training.trainingmanagementsystem.dao.AppRoleRepository;
+import com.training.trainingmanagementsystem.dao.AppUserRepository;
+import com.training.trainingmanagementsystem.dao.SubjectRepository;
+import com.training.trainingmanagementsystem.dao.UserRoleRepository;
 
 @Repository
 public class SubjectDescriptionDao {

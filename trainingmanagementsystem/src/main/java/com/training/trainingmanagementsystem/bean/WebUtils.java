@@ -6,12 +6,13 @@ import java.util.Collection;
 
 
 public class WebUtils {
- /*
+ 
+	/*
     public static String toString(User user) {
         StringBuilder sb = new StringBuilder();
  
         sb.append("UserName:").append(user.getUsername());
-
+ 
         Collection<GrantedAuthority> authorities = user.getAuthorities();
         if (authorities != null && !authorities.isEmpty()) {
             sb.append(" (");
@@ -28,5 +29,6 @@ public class WebUtils {
         }
         return sb.toString();
     }
-  */   
+    */
+     
 }

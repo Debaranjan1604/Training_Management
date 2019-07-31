@@ -45,8 +45,7 @@ public class LoginSecurityConfig //extends WebSecurityConfigurerAdapter
  
     @Autowired
     private DataSource dataSource;
- 
-    /*
+ /*
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
