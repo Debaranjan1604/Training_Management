@@ -1,0 +1,49 @@
+<html>  
+<head>  
+  
+</head>  
+<body> 
+<br/>
+<br/>
+<h1>List of User-subscribedSubject</h1>
+<p [hidden]="nodataintable">No Subscribed User found</p>
+<form  #postForm="ngForm">
+<table border="1" [hidden]="tablestatus">
+<tr> 
+   <td>S.No.</td>
+   <td>User Name</td>
+   <td>Subject Name</td>
+   <td> Course Status</td>
+   <td> Remove User</td>
+   <td> Update CourseStatus</td>
+   </tr> 
+<tr *ngFor="let item of registeredUserData">
+   <td>{{item.sno}}</td>
+   <td>{{item.userName}}</td>
+
+   <td>{{item.subjectName}}</td>
+   
+   
+   <td>
+      <select *ngIf="(item.courseStatus)=='Pending'" name="courseStatus" #courseStatus>
+            <option  value="Pending">Pending</option>
+         <option  value="Completed">Completed</option>
+         </select>
+      <select *ngIf="(item.courseStatus)=='Completed'" name="courseStatus" #courseStatus>
+            <option  value="Completed">Completed</option>
+            <option  value="Pending">Pending</option>
+         </select>
+      </td>
+   <td><button (click)="removeUser(item.id)">Remove User</button></td>
+   <td><button (click)="updateCourseStatus(item,(item.courseStatus))">Update CourseStatus</button></td>
+</tr>
+ 
+
+
+</table>  
+
+<br/>
+<button type="button" name="Logout" (click)="logout()">Logout</button>
+</form>
+</body>  
+</html>

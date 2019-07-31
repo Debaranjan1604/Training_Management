@@ -1,0 +1,34 @@
+
+<html>
+<head>
+
+</head>
+<body onload='document.loginForm.username.focus();'>
+
+		<h1>User Login</h1>
+		<p [hidden]='getloginerror()'>Your UserName or Password is incorrect</p>
+
+		<form name='loginForm'
+		  action=" " method='POST'>
+
+		  <table>
+			<tr>
+				<td>User:</td>
+				<td><input type='text' name='username' value='' #username></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type='password' name='password' #password/></td>
+			</tr> 
+			<tr>
+				<td colspan='2'><input name="submit" type="submit"
+					value="submit" (click)="validateUser(username.value,password.value)"/>
+					<a [routerLink]="['/']">Home</a>
+				</td>
+			</tr>
+		  </table>
+
+		</form>
+	
+</body>
+</html>

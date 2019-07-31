@@ -1,0 +1,87 @@
+<html>  
+  <head>  
+  <title>Subject </title>  
+  </head>  
+  <body> 
+   <!--
+  <table border="1" >
+  <tr> 
+     <td>S.No.</td>
+     <td>Subject Name</td>
+     <td>Subject Description</td>
+     <td> Subscribe Subject</td>
+     <td>  UnSubscribe Subject</td>
+     </tr> 
+     <tr *ngFor="let item of data">
+      <td>{{item.id}}</td>
+      <td>{{item.subjectname}}</td>
+      <td>{{item.subjectdescription}}</td>
+      <td>
+         
+        <button [hidden]="checkRegister(item.subjectname)" (click)="subscribeSubject(item.id)">Subscribe Subject</button></td>
+      
+        <td><button [hidden]="!checkRegister(item.subjectname)" (click)="unsubscribeSubject(item.id)">UnSubscribe Subject</button></td>
+      </tr>
+   
+   
+  </table>  
+
+-->
+  <br/>
+  
+
+  <br/>
+
+  <!--
+    [disabled]
+  -->
+  <a [routerLink]="['/coursestatus']">See Your CourseStatus</a>
+<!--<hr/> -->
+
+  <h1>Select Subject to Subscribe.</h1>
+  <p *ngIf="(data.length)==0">No Subject For Subscribe</p>
+  <table >
+      
+<div *ngIf="(data.length)>0">
+<tr >
+  <span *ngFor="let item of data">
+  <td [hidden]="checkRegister(item.subjectname)">{{item.subjectname}}</td>
+<td><input type="checkbox" [hidden]="checkRegister(item.subjectname)" (change)="onCheckboxChagen($event,item.id,'subscribe')" value={{item.subjectname}} name="checkbox1" id="checkbox1"></td>
+  </span>
+</tr> 
+</div>
+</table>
+
+<input type="button" name="subscribe" value="subscribe" (click)="subscribeMultipleSubject()"/>
+<!--
+  (click)="subscribeSubject(item.id)"
+<hr/>
+  <h1>Please Select Multiple Subscribe Subject.</h1>
+  <table *ngFor="let item of data; let i = index;">
+<tr>
+  <td [hidden]="checkRegister(item.subjectname)">{{item.subjectname}}</td>
+<td><input type="checkbox" #checkbox1 name="checkbox1" [(ngModel)]="abhi[i]" [hidden]="checkRegister(item.subjectname)" value={{item.subjectname}} name="checkbox1" id="checkbox1"></td>
+</tr>  
+</table>
+<input type="button" (click)="check()" name="check"/>
+-->
+
+<hr/>
+
+<h1>Select Subject to Unsubscribe.</h1>
+  <table>
+<tr>
+    <span *ngFor="let item of data">
+  <td [hidden]="!checkRegister(item.subjectname)">{{item.subjectname}}</td>
+<td><input type="checkbox" [hidden]="!checkRegister(item.subjectname)" (change)="onCheckboxChagen($event,item.id,'unsubscribe')" value={{item.subjectname}} name="checkbox1" id="checkbox1"></td>
+</span>
+</tr>  
+</table>
+<input type="button" name="unsubscribe" value="unsubscribe" (click)="unSubscribeMultipleSubject()"/> 
+<br/>
+<br/>
+
+<button type="button" name="Logout" (click)="logout()">Logout</button>
+
+  </body> 
+  </html>  

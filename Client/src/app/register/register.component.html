@@ -1,0 +1,43 @@
+
+<!DOCTYPE html >
+<html>
+<head>
+<title>Training Registration Form</title>
+</head>
+<body>
+<h1>Training Register Form</h1>
+<p [hidden]="successMessage">You have registered Successfully</p>
+<form (ngSubmit)="registerAction(user.value,password.value,role.value,secureKey.value)" #postForm="ngForm">
+			<table style="width: 50%">
+				<tr>
+					<td>User Name</td>
+					<td><input type="text" name="username" required #user  [(ngModel)]="details.username" 
+						required/></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password" required="required" #password  [(ngModel)]="details.password" 
+						required/></td>
+				</tr>
+				<tr>
+					<td>Role</td>
+					<td>
+						<select name="role_name" required="required" #role  [(ngModel)]="details.role" (change)="checkRole(role)">
+							<option value="admin">Admin</option>
+							<option value="user">User</option>
+						</select>
+						</td>
+				</tr>
+				<tr>
+					
+					<td [hidden]="!gethide()">Secure Key</td>
+					<td [hidden]="!gethide()"><input type="password"  name="secureKey"  #secureKey /></td>
+					
+				</tr>
+				</table>
+			<input type="submit" value="Submit" [disabled]="!postForm.form.valid"/><a [routerLink]="['/']">Home</a>
+			</form>
+</body>
+
+{{error}}
+</html>

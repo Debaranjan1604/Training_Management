@@ -1,0 +1,30 @@
+<html>  
+<head>  
+  
+</head>  
+<body> 
+<br/>
+<br/>
+<h1>List of User-CourseStatus</h1>
+<!-- [hidden]="nodataintable"  [hidden]="tablestatus"-->
+<p *ngIf="coursestatusdata.length==0">No  User Status found</p>
+<form  #postForm="ngForm">
+<table border="1" *ngIf="coursestatusdata.length!=0">
+<tr> 
+   <td>Course Name</td>
+   <td>CourseStatus</td>
+   </tr> 
+<tr *ngFor="let item of coursestatusdata">
+   <td>{{item.courseName}}</td>
+   <td>{{item.courseStatus}}</td>
+</tr>
+ 
+
+
+</table>  
+
+<br/>
+<button type="button" name="Logout" (click)="logout()">Logout</button>
+</form>
+</body>  
+</html>
